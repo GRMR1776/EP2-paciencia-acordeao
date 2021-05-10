@@ -51,11 +51,6 @@ while continuar:
             elif escolha==2:
                 baralho = empilha(baralho, posicao, posicao-3)
         
-
-
-
-            
-
         break
     continuar=False
 
@@ -64,6 +59,10 @@ while continuar:
         print('WON')
     else:
         print('you lose')
+    resposta= input("Você deseja continuar? (Digite S ou N)\n")
+    if resposta== "N":
+        continuar=False
+    
 
 
 
