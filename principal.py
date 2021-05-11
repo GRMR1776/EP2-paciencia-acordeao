@@ -51,7 +51,15 @@ while continuar:
         posicao=posicao-1
         possiveis_movimentos=lista_movimentos_possiveis(baralho, posicao)
         while possiveis_movimentos == []:
-            posicao= int(input(f'A carta {baralho[posicao]} nao pode ser movida: escolha uma carta:(entre 1 e {len(baralho)}) '))
+            if extrai_naipe(baralho[posicao])=="♥":
+                carta2=RED+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♦":
+                carta2=BLUE+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♣":
+                carta2=GREEN+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♠":
+                carta2=CYAN+baralho[posicao]+RESET 
+            posicao= int(input(f'A carta {carta2} nao pode ser movida: escolha uma carta:(entre 1 e {len(baralho)}) '))
             posicao = posicao-1
             possiveis_movimentos=lista_movimentos_possiveis(baralho, posicao)
         if possiveis_movimentos == [1]:
