@@ -23,7 +23,8 @@ while continuar != True and finalizar == False:
 
 #movimentos posiveis 
 while continuar:
-    baralho = cria_baralho()
+    baralho=['6♥', 'J♥', '9♣', '9♥']
+    #baralho = cria_baralho()
     while possui_movimentos_possiveis(baralho):
         print('O estado atual do baralho é:\n')
         for i in range(len(baralho)):
@@ -51,8 +52,8 @@ while continuar:
             elif escolha==2:
                 baralho = empilha(baralho, posicao, posicao-3)
         
-        break
-    continuar=False
+        #break
+    #continuar=False
 
         #TODO
     if len(baralho) <= 1:
@@ -62,6 +63,7 @@ while continuar:
     resposta= input("Você deseja continuar? (Digite S ou N)\n")
     if resposta== "N":
         continuar=False
+        print("Até breve!")
     
 
 
