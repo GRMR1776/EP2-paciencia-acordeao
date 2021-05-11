@@ -67,9 +67,33 @@ while continuar:
         elif possiveis_movimentos == [3]:
             baralho = empilha(baralho, posicao, posicao-3)
         elif possiveis_movimentos == [1, 3]:
-            print(f'Sobre qual carta vc deseja empilhar {baralho[posicao]}? ')
-            print(f'1. {baralho[posicao -1]}')
-            print(f'2. {baralho[posicao -3]}')
+            if extrai_naipe(baralho[posicao])=="♥":
+                carta2=RED+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♦":
+                carta2=BLUE+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♣":
+                carta2=GREEN+baralho[posicao]+RESET 
+            elif extrai_naipe(baralho[posicao])=="♠":
+                carta2=CYAN+baralho[posicao]+RESET 
+            print(f'Sobre qual carta vc deseja empilhar {carta2}? ')
+            if extrai_naipe(baralho[posicao-1])=="♥":
+                carta2=RED+baralho[posicao-1]+RESET 
+            elif extrai_naipe(baralho[posicao-1])=="♦":
+                carta2=BLUE+baralho[posicao-1]+RESET 
+            elif extrai_naipe(baralho[posicao-1])=="♣":
+                carta2=GREEN+baralho[posicao-1]+RESET 
+            elif extrai_naipe(baralho[posicao-1])=="♠":
+                carta2=CYAN+baralho[posicao-1]+RESET 
+            print(f'1. {carta2}')
+            if extrai_naipe(baralho[posicao-3])=="♥":
+                carta2=RED+baralho[posicao-3]+RESET 
+            elif extrai_naipe(baralho[posicao-3])=="♦":
+                carta2=BLUE+baralho[posicao-3]+RESET 
+            elif extrai_naipe(baralho[posicao-3])=="♣":
+                carta2=GREEN+baralho[posicao-3]+RESET 
+            elif extrai_naipe(baralho[posicao-3])=="♠":
+                carta2=CYAN+baralho[posicao-3]+RESET 
+            print(f'2. {carta2}')
 
             escolha =  int(input('Digite (1 ou 2)'))
             if escolha == 1:
