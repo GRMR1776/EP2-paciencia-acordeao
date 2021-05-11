@@ -11,6 +11,15 @@ print('Desde que alguma das condições acima seja satisfeita, qualquer carta po
 
 #iniciar
 
+#colorir
+RED   = "\033[1;31m"  
+BLUE  = "\033[1;34m"
+CYAN  = "\033[1;36m"
+YELLOW  = "\033[1;33m"
+GREEN = "\033[0;32m"
+RESET = "\033[0;0m"
+BOLD    = "\033[;1m"
+REVERSE = "\033[;7m"
 continuar = False
 finalizar = False
 while continuar != True and finalizar == False:
@@ -23,12 +32,20 @@ while continuar != True and finalizar == False:
 
 #movimentos posiveis 
 while continuar:
-    baralho=['6♥', 'J♥', '9♣', '9♥']
-    #baralho = cria_baralho()
+    #baralho=['6♥', 'J♥', '9♣', '9♥']
+    baralho = cria_baralho()
     while possui_movimentos_possiveis(baralho):
         print('O estado atual do baralho é:\n')
         for i in range(len(baralho)):
-            carta=str(i+1)+'. '+ baralho[i]
+            if extrai_naipe(baralho[i])=="♥":
+                carta2=RED+baralho[i]+RESET 
+            elif extrai_naipe(baralho[i])=="♦":
+                carta2=BLUE+baralho[i]+RESET 
+            elif extrai_naipe(baralho[i])=="♣":
+                carta2=GREEN+baralho[i]+RESET 
+            elif extrai_naipe(baralho[i])=="♠":
+                carta2=CYAN+baralho[i]+RESET 
+            carta=str(i+1)+'. '+ carta2
             print(carta)
         posicao= int(input(f'escolha uma carta:(entre 1 e {len(baralho)})'))
         posicao=posicao-1
